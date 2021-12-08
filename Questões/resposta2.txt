@@ -1,0 +1,24 @@
+from . import db
+
+class Users(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(45), nullable=False)
+    email = db.Column(db.String(45), nullable=False)
+    password = db.Column(db.String(45), nullable=False)
+    role_id = db.Column(db.Integer, unique=True, nullable=False)
+    created_at = db.Column(db.DateTime, nullable=False)
+    updated_at = db.Column(db.DateTime)
+
+class Roles(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    description = db.Column(db.String(45), nullable=False)
+
+class Claims(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    description = db.Column(db.String(45), nullable=False)
+    active = db.Column(db.Boolean, nullable=False)
+
+class User_claims(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id=db.Column(db.Integer, db.ForeignKey('Users.id'))
+    claim_id=db.Column(db.Integer, db.ForeignKey('Claims.id'))

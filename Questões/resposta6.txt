@@ -1,0 +1,2 @@
+O problema possivelmente esta na variavel "WALLET_X_TOKEN_MAX_AGE" que não parece ter sido definida da forma certa.
+Ver na documentação do codigo para utilizar da forma correta.

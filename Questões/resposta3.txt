@@ -1,0 +1,11 @@
+@app.route("/user/<id>", methods=["GET"])
+def seleciona_usuario_por_id(id):
+    users_obj = Users.query.filter_by(id=id).first()
+    print(users_obj)
+
+    #retorna o valor que coresponde ao mesmo id passado
+    #veiculo_obj = Users.query.filter_by(id=id).first()
+    #converte para json
+    #veiuclo_json = veiculo_obj.to_json()
+    #retorna o json para a requisicao
+    return str(users_obj.to_json())

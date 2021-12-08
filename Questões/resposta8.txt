@@ -1,0 +1,8 @@
+Utilizaria a "Chain of Responsibility".
+Ele permite que um objeto envie um comando sem saber qual objeto irá recebê-lo e tratá-lo.
+A solicitação é enviada de um objeto para outro, tornando-os partes de uma cadeia e cada objeto nesta cadeia pode manipular o comando, passá-lo ou fazer ambos.
+Para implementar deve seguir algumas recomendações:
+    Evitar acoplar o remetente de uma solicitação a seu receptor, dando a mais de um objeto a chance de lidar com a solicitação.
+    Encadear os objetos de recebimento e passe a solicitação ao longo da cadeia até que um objeto o trate.
+    Solicitações de inicialização e saída com um único pipeline de processamento que contém muitos manipuladores possíveis.,
+    Uma lista vinculada orientada a objetos com travessia recursiva.

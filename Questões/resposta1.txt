@@ -1,0 +1,6 @@
+SELECT u.name, u.email, r.description, group_concat(c.description SEPARATOR ";") as claims_description
+FROM shipay.users u
+  LEFT JOIN shipay.roles r ON r.id = u.role_id
+  LEFT JOIN shipay.user_claims uc ON u.id = uc.user_id
+  INNER JOIN shipay.claims c ON c.id = uc.claim_id
+  GROUP BY u.id;
